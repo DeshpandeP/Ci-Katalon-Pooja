@@ -1,0 +1,46 @@
+Suite/Test/Step Name,Browser,Description,Start time,End time,Duration,Status
+TS_RegressionTest,Firefox 67.0,,2019-07-05 14:15:53,2019-07-05 14:16:35,42.580s,PASSED
+,,,,,,
+Test Cases/Main Test Cases/TC1_Verify Successful Login,Firefox 67.0,"Verify if users can login successful. 
+
+Steps:
+- Click on 'Book Appointment' button to login
+- Input username and password
+- Click on 'Login' button
+
+Expected result:
+'Appointment' section is displayed after successful login",2019-07-05 14:15:53,2019-07-05 14:16:17,23.443s,PASSED
+"comment(""Story: Login to CURA system"")",Firefox 67.0,,2019-07-05 14:15:55,2019-07-05 14:15:55,0.134s,PASSED
+"comment(""Given that the user has the valid login information"")",Firefox 67.0,,2019-07-05 14:15:55,2019-07-05 14:15:55,0.009s,PASSED
+openBrowser(G_SiteURL),Firefox 67.0,,2019-07-05 14:15:55,2019-07-05 14:16:10,15.228s,PASSED
+"click(findTestObject(""Page_CuraHomepage/btn_MakeAppointment""))",Firefox 67.0,,2019-07-05 14:16:10,2019-07-05 14:16:11,0.914s,PASSED
+"setText(findTestObject(""Page_Login/txt_UserName""), Username)",Firefox 67.0,,2019-07-05 14:16:11,2019-07-05 14:16:11,0.202s,PASSED
+"setText(findTestObject(""Page_Login/txt_Password""), Password)",Firefox 67.0,,2019-07-05 14:16:11,2019-07-05 14:16:12,0.342s,PASSED
+"comment(""When he logins to CURA system"")",Firefox 67.0,,2019-07-05 14:16:12,2019-07-05 14:16:12,0.000s,PASSED
+"click(findTestObject(""Page_Login/btn_Login""))",Firefox 67.0,,2019-07-05 14:16:12,2019-07-05 14:16:13,0.939s,PASSED
+"comment(""Then he should be able to login successfully"")",Firefox 67.0,,2019-07-05 14:16:13,2019-07-05 14:16:13,0.002s,PASSED
+"landingPage = verifyElementPresent(findTestObject(""Page_CuraAppointment/div_Appointment""), G_Timeout)",Firefox 67.0,,2019-07-05 14:16:13,2019-07-05 14:16:13,0.059s,PASSED
+closeBrowser(),Firefox 67.0,,2019-07-05 14:16:13,2019-07-05 14:16:14,1.810s,PASSED
+,,,,,,
+Test Cases/Main Test Cases/TC2_Verify Successful Appointment,Firefox 67.0,"Verify if users can book an appointment sucessfully.
+Pre-condition: Users have already logged in
+
+Steps:
+- Fill in appoinment's information
+- Click on appointment's button
+
+Expected results:
+Appointment Confirmation page is displayed",2019-07-05 14:16:17,2019-07-05 14:16:35,18.643s,PASSED
+"comment(""Story: Book an appointment"")",Firefox 67.0,,2019-07-05 14:16:17,2019-07-05 14:16:17,0.002s,PASSED
+"comment(""Given that the user has logged into their account"")",Firefox 67.0,,2019-07-05 14:16:17,2019-07-05 14:16:17,0.003s,PASSED
+openBrowser(G_SiteURL),Firefox 67.0,,2019-07-05 14:16:17,2019-07-05 14:16:26,9.435s,PASSED
+"callTestCase(findTestCase(""Common Test Cases/Login""), [""Username"":""John Doe"", ""Password"":""ThisIsNotAPassword""], STOP_ON_FAILURE)",Firefox 67.0,,2019-07-05 14:16:26,2019-07-05 14:16:29,2.654s,PASSED
+"comment(""And Appointment page is displayed"")",Firefox 67.0,,2019-07-05 14:16:29,2019-07-05 14:16:29,0.001s,PASSED
+if (true),Firefox 67.0,,2019-07-05 14:16:29,2019-07-05 14:16:30,1.389s,PASSED
+"comment(""When he fills in valid information in Appointment page"")",Firefox 67.0,,2019-07-05 14:16:30,2019-07-05 14:16:30,0.005s,PASSED
+"click(findTestObject(""Page_CuraAppointment/btn_BookAppointment""))",Firefox 67.0,,2019-07-05 14:16:30,2019-07-05 14:16:31,0.436s,PASSED
+"verifyTextPresent(""Appointment Confirmation"", false)",Firefox 67.0,,2019-07-05 14:16:31,2019-07-05 14:16:31,0.226s,PASSED
+"comment(""Then he should be able to book a new appointment"")",Firefox 67.0,,2019-07-05 14:16:31,2019-07-05 14:16:31,0.002s,PASSED
+if (true),Firefox 67.0,,2019-07-05 14:16:31,2019-07-05 14:16:31,0.203s,PASSED
+takeScreenshot(),Firefox 67.0,,2019-07-05 14:16:31,2019-07-05 14:16:31,0.157s,PASSED
+closeBrowser(),Firefox 67.0,,2019-07-05 14:16:31,2019-07-05 14:16:33,1.752s,PASSED
